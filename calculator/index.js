@@ -34,18 +34,19 @@ function operate(operator, n1, n2){
 }
 
 function buttonHandler(e){
-  const value = e.currentTarget.name;
-  updateDisplay(value);
+  console.log(e.target);
 }
 
 function updateDisplay(value){
-  const displayText = document.querySelector('p');
+  const displayText = document.getElementById("display");
   displayText.textContent += value;
-
-
 }
 
-const buttons = document.querySelectorAll('[name]');
-for (let i=0; i < buttons.length; i++){
-  buttons[i].addEventListener('click', buttonHandler, false);
+const clickItems = document.querySelectorAll('.clickable');
+for (let i=0; i<clickItems.length; i++){
+  clickItems[i].addEventListener("click", buttonHandler, false);
+}
+
+for (let i=0; i<clickItems.length; i++){
+  console.log(clickItems[i].attributes)
 }

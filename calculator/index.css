@@ -1,22 +1,22 @@
 body {
-  background: #teal;
+  background: teal;
 }
 
+/* //////////////////////// */
 #wrapper {
   width: 35%;
   margin: auto auto;
 }
 
+/* //////////////////////// */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(60px, auto);
   border: 1px solid black;
 }
-.grid > div {
 
-}
-
+/* //////////////////////// */
 .display {
   grid-column: span 4;
   grid-row: 1;
@@ -29,11 +29,7 @@ body {
   text-align: right;
 }
 
-.display p {
-  margin-bottom: 5px;
-  margin-right: 5px;
-}
-
+/* //////////////////////// */
 .operands {
   grid-column: 4;
   grid-row-start: 2;
@@ -46,8 +42,15 @@ body {
   border: 1px solid black;
   background: #FF9500;
   color: #fff;
+  transition: .5s;
+}
+.operands > div:hover {
+  background: #fff;
+  color: #FF9500;
 }
 
+
+/* //////////////////////// */
 .specials {
   grid-column: span 3;
   grid-row: 2;
@@ -56,10 +59,16 @@ body {
   grid-template-rows: 1;
 }
 .specials > div {
-  background: #505050;
+  background: #D4D4D2;
   border: 1px solid #000;
+  transition: .5s;
+}
+.specials > div:hover {
+  background: #eee;
 }
 
+
+/* //////////////////////// */
 .digits {
   grid-column: span 3;
   grid-row-start: 3;
@@ -70,26 +79,30 @@ body {
 }
 .digits > div {
   border: 1px solid #000;
-  background: #D4D4D2;
+  background: #505050;
+  color: #fff;
+  transition: .5s;
 }
-
+.digits > div:hover {
+  background: #ddd;
+}
 .zero {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 4;
 }
 
+/* //////////////////////// */
+div .clickable {
+  width: 1fr;
+  height: 1fr;
+  text-align: center;
+  font-size: 36px;
+  padding: 5px;
+}
 
-
+/* //////////////////////// */
 h1 {
   text-align: center;
   font-size: 32px;
-}
-
-p {
-  font-size: 36px
-}
-
-div {
-  text-align: center;
 }
