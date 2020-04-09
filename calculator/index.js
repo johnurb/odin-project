@@ -34,12 +34,13 @@ function operate(operator, n1, n2){
 }
 
 function buttonHandler(e){
-  console.log(e.target);
+  const value = e.target.innerText;
+  updateDisplay(value);
 }
 
 function updateDisplay(value){
   const displayText = document.getElementById("display");
-  displayText.textContent += value;
+  displayText.textContent = value;
 }
 
 const clickItems = document.querySelectorAll('.clickable');
