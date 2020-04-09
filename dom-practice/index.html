@@ -1,0 +1,30 @@
+<html>
+<head><title>DOM Practice</title></head>
+<!-- your html file: -->
+<body>
+    <h1>
+        THE TITLE OF YOUR WEBPAGE
+    </h1>
+    <div id="container">
+            <button id="1">Click Me</button>
+            <button id="2">Click Me</button>
+            <button id="3">Click Me</button>
+    </div>
+        <script>
+            // your javascript file
+            // buttons is a node list. It looks and acts much like an array.
+        const buttons = document.querySelectorAll('button');
+
+        // we use the .forEach method to iterate through each button
+        buttons.forEach((button) => {
+
+        // and for each one we add a 'click' listener
+        button.addEventListener('click', (e) => {
+            alert(button.id);
+        });
+        });
+
+        </script>
+        
+</body>
+</html>

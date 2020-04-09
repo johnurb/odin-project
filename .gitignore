@@ -1,0 +1,10 @@
+curriculum/
+.DS_Store
+**pycache**
+**/logs
+**/bin
+**/out
+**/target
+.pyc
+.class
+.o
