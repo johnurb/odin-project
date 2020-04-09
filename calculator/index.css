@@ -1,79 +1,88 @@
 body {
-  background-color: #7eb5b5;
+  background-color: #000;
 }
 
 #wrapper{
   display: grid;
-  width: 40%;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 100px;
-  border: 1px solid black;
-  background-color: #fff;
+  width: 20%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 75px;
+  grid-gap: 2px;
   margin: auto auto;
+  text-align: center;
+  border: 1px solid #fff;
 }
 
 .display {
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 5;
   grid-row-start: 1;
-  grid-row-end: 2;
-  border-bottom: 1px solid black;
-  background-color: #b59a7e;
+  grid-row-end: 3;
+  border: 1px solid #fff;
 }
 
-.functionality {
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 5;
-  border-bottom: 1px solid black;
-  background-color: rgba(181, 126, 126, 1);
-  text-align: center;
+.operands {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 7;
+  border: 1px solid #fff;
 }
 
-.operands{
+.specials {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 3;
-  grid-row-end: 4;
-  padding: 6px;
-  margin: 5px;
-  border-bottom: 1px solid black;
-  background-color: rgba(209, 209, 209, 0.3);
-  font-size: 30px;
+  grid-row-end: 3;
+  color: #000;
+  border: 1px solid #fff;
 }
 
 .digits {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 4;
-  grid-row-end: 5;
-  padding: 6px;
-  margin: 5px;
-  border-bottom: 1px solid black;
-  background-color: rgba(209, 209, 209, 0.3);
-  font-size: 30px;
+  grid-row-end: 7;
+}
+
+.operand {
+  background-color: #FF9500;
+  color: #FFF;
+}
+
+.special{
+  background-color: #D4D4D2;
+  color: #000;
+}
+
+.digit {
+  background-color: #505050;
+  color: #fff;
 }
 
 button {
   font-size: 25px;
-  padding: 7px;
-  margin: 3px;
-  border-radius: 5px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   transition-duration: 0.3s;
+  border: none;
 }
 
 button:hover {
-  background-color: #555555;
+  background-color: #fff;
   color: white;
 }
 
 h1 {
   text-align: center;
+  color: #fff;
 }
 
 p {
   text-align: right;
-  margin: 25px;
   font-size: 45px;
+  color: #fff;
+  padding: 25px;
 }
