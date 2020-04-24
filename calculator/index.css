@@ -1,111 +1,74 @@
 body {
-  background: teal;
+  background-color: #c2c2c2;
 }
 
-/* //////////////////////// */
-#wrapper {
-  width: 35%;
+.calc-body {
+  width: 25%;
+  height: 60vh;
   margin: auto auto;
-}
-
-/* //////////////////////// */
-.grid {
+  margin-top: 10%;
+  background-color: #25274d;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(60px, auto);
-  border: 1px solid black;
-}
-
-/* //////////////////////// */
-.display {
-  grid-column: span 4;
-  grid-row: 1;
-  display: grid;
-  border: 1px solid black;
-}
-.display > div {
-  background: #000;
-  color: #fff;
+  grid-template-rows: repeat(7, 1fr);
+  border-radius: 15px;
+  border: 2px solid black;
+  overflow: hidden;
   text-align: right;
 }
-#display {
-  font-size: 36px;
-}
 
-/* //////////////////////// */
-.operands {
-  grid-column: 4;
-  grid-row-start: 2;
-  grid-row-end: 7;
+#result {
+  grid-column: 1 / 5;
+  grid-row: 1 / 3;
+  border-bottom: 2px solid black;
+  color: #4d3825;
+  font-size: 42px;
+}
+.result {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.row {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 5;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-}
-.operands > div {
-  border: 1px solid black;
-  background: #FF9500;
-  color: #fff;
-  transition: .5s;
-}
-.operands > div:hover {
-  background: #fff;
-  color: #FF9500;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-
-/* //////////////////////// */
-.specials {
-  grid-column: span 3;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1;
-}
-.specials > div {
-  background: #D4D4D2;
-  border: 1px solid #000;
-  transition: .5s;
-}
-.specials > div:hover {
-  background: #eee;
+.special {
+  background-color: #464866;
 }
 
+.operator {
+  background-color: #2e9cca;
+}
 
-/* //////////////////////// */
-.digits {
-  grid-column: span 3;
-  grid-row-start: 3;
-  grid-row-end: 7;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+.digit {
+  background-color: #aaabb8;
 }
-.digits > div {
-  border: 1px solid #000;
-  background: #505050;
-  color: #fff;
-  transition: .5s;
-}
-.digits > div:hover {
-  background: #ddd;
-}
+
 .zero {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 4;
+  grid-column: 1 / 3;
 }
 
-/* //////////////////////// */
-div .clickable {
-  width: 1fr;
-  height: 1fr;
-  text-align: center;
-  font-size: 36px;
-  padding: 5px;
+.zerobtn {
+  background-color: #29648a;
 }
 
-/* //////////////////////// */
-h1 {
-  text-align: center;
-  font-size: 32px;
+button {
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+  transition-duration: .5s;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #c2c2c2;
 }

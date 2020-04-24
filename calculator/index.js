@@ -1,53 +1,69 @@
-function add(n1, n2){
-  return n1 + n2;
-}
+const add = (a, b) => (a + b);
+const subtract = (a, b) => (a - b);
+const multiply = (a, b) => (a * b);
+const divide = (a, b) => b == 0 ? undefined : (a / b);
 
-function subtract(n1, n2){
-  return n1 - n2;
-}
+let resultText;
 
-function multiply(n1, n2){
-  return n1 * n2;
-}
+const memory = {
+  digits: ["decimal", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+  operators: ["divide", "multiply", "subtract", "add", "equals"],
+  specials: ["ac", "pm", "backspace"],
 
-function divide(n1, n2){
-  if(n2 == 0){
-    return undefined;
-  } else {
-    return n1 / n2;
+  numberString: "0",
+
+  lastClickedButton: "0",
+
+  update: function(clickedButtonValue){
+    console.log(clickedButtonValue);
+
+    if (this.digits.includes(clickedButtonValue)){
+      if (this.digits.includes(this.lastClickedButton)){
+        this.numberString += clickedButtonValue;
+      }
+      this.numberString = "7";
+    } else if (this.operators.includes(clickedButtonValue)){
+      console.log("no");
+    } else {
+      switch(clickedButtonValue){
+        case "ac":
+          this.numberString = "0";
+        case "pm":
+          if(this.numberString[0] == "-"){
+            this.numberString[0] = "0";
+          } else {
+            this.numberString = "-" + this.numberString;
+          }
+      }
+    }
+
+    resultText = this.numberString;
   }
 }
-
-function operate(operator, n1, n2){
+function operate(operator, a, b){
   switch(operator){
     case "+":
-      return add(n1, n2);
+      return add(a,b);
     case "-":
-      return subtract(n1, n2);
+      return subtract(a,b);
     case "*":
-      return multiply(n1, n2);
+      return multiply(a,b);
     case "/":
-      return divide(n1, n2);
+      return divide(a,b);
     default:
       return undefined;
   }
 }
 
-function buttonHandler(e){
-  const value = e.target.innerText;
-  updateDisplay(value);
+function buttonClickHandler(e){
+  let clickedButton = e.toElement.id;
+  memory.update(clickedButton);
 }
 
-function updateDisplay(value){
-  const displayText = document.getElementById("display");
-  displayText.textContent = value;
+const buttons = document.getElementsByTagName("button");
+for (let button of buttons){
+  button.addEventListener("click", buttonClickHandler);
 }
 
-const clickItems = document.querySelectorAll('.clickable');
-for (let i=0; i<clickItems.length; i++){
-  clickItems[i].addEventListener("click", buttonHandler, false);
-}
-
-for (let i=0; i<clickItems.length; i++){
-  console.log(clickItems[i].attributes)
-}
+resultText = document.querySelectorAll(".result")[0].textContent;
+resultText = "5";
