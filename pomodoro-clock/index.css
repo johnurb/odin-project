@@ -1,0 +1,51 @@
+body {
+  background-color: #f9f6ef;
+  margin-top: 15vh;
+}
+
+.container {
+  background-color: #3b5998;
+  width: 85%;
+  padding: 15px;
+  margin: auto auto;
+  border-radius: 15px;
+  box-shadow: 2px 3px black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.clock {
+  width: 45%;
+  height: 30vh;
+  background-color: #fff;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+}
+
+.settings {
+  width: 25%;
+  background-color: #fff;
+  text-align: center;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.settings>div:nth-child(even) {
+  margin: 15px;
+}
+
+button {
+  padding: 5px;
+  cursor: pointer;
+  font-size: 10px;
+  text-decoration: none;
+}
+button:hover {
+  background-color: #c2c2c2;
+}
+button:focus {
+  outline: none;
+}
