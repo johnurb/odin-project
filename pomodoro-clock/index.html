@@ -9,23 +9,26 @@
   <body>
     <div class="container">
       <div class="clock">
-
+        <span id="time">25:00</span>
+        <button class="controls" id="start">Start</button>
+        <button class="controls" id="pause">Pause</button>
+        <button class="controls" id="stop">Stop</button>
       </div>
       <div class="settings">
         <div class="session">
           <h1>Focus</h1>
-          <div>
-            <button id="focus-plus">+</button>
+          <div class="adjust">
+            <button class="change-minutes" id="focus-plus">+</button>
             <h2 id="focus-minutes">25</h2>
-            <button id="focus-minus">-</button>
+            <button class="change-minutes" id="focus-minus">-</button>
           </div>
         </div>
         <div class="break">
           <h1>Break</h1>
-          <div>
-            <button id="break-plus">+</button>
+          <div class="adjust">
+            <button class="change-minutes" id="break-plus">+</button>
             <h2 id="break-minutes">5</h2>
-            <button id="break-minus">-</button>
+            <button class="change-minutes" id="break-minus">-</button>
           </div>
         </div>
       </div>
