@@ -1,3 +1,5 @@
+let interval;
+
 function timerObjectsHandler(e){
   const clickId = e.target.id;
   switch (clickId){
@@ -32,7 +34,7 @@ function controlButtonsHandler(e){
       break;
     case "pause":
       console.log("pause");
-      break;
+      clearInterval(interval);
     case "stop":
       console.log("stop");
       break;
@@ -44,14 +46,17 @@ function startTimer(duration, display){
   let totalSeconds = duration * 60;
   let minutes;
   let seconds;
-  setInterval(function() {
+  interval = setInterval(function() {
     minutes = parseInt(totalSeconds / 60, 10);
     seconds = parseInt(totalSeconds % 60, 10);
 
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
-    display.textContent = `${minutes}:${seconds}`;
-    totalSeconds--;
+    display.textContent = minutes + ":" + seconds;
+
+    if (--totalSeconds == "0"){
+      alert("Done!");
+    }
   }, 1000);
 }
 
